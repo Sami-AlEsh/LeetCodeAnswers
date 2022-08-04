@@ -14,23 +14,3 @@ class Solution:
             return slow
         except:
             return slow
-            
-        
-        
-        count = 0
-        cur = head
-        while cur != None:
-            count += 1
-            cur = cur.next
-        
-        cc = count // 2
-        if count % 2 == 0:
-            cc += 1
-        
-        cur = head
-        for _ in range(cc):
-            cur = cur.next
-        
-        return cur.val
-            
-        
