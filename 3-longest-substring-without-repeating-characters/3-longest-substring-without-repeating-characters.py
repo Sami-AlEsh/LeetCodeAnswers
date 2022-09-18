@@ -3,19 +3,12 @@ class Solution:
         start = 0
         _max = 0
         unique = set()
+        
         for end in range(len(s)):
-            if s[end] not in unique:
-                #print(f'{s[end]} added')
-                unique.add(s[end])
-            
-            else:
-                while s[end] in unique:
-                    #print(f'{s[start]} removed')
-                    unique.remove(s[start])
-                    start += 1
-                unique.add(s[end])
-            
-            #print(s[start:end+1], ', set:', unique)
-            _max = max(_max, len(unique))
+            while s[end] in unique:
+                unique.remove(s[start])
+                start += 1
+            unique.add(s[end])
+            _max = max(_max, end-start+1)
         
         return _max
