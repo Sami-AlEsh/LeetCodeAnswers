@@ -8,4 +8,4 @@ class Solution:
                     stack.pop()
             else:
                 stack.append([s[i], 1])
-        return ''.join(map(lambda c: ''.join([c[0]]*c[1]), stack))
+        return ''.join(map(lambda c: c[0]*c[1], stack))
