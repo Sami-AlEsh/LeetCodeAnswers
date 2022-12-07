@@ -37,8 +37,6 @@ class Solution:
                 cur = cur.next
             q = cur
             
-            print(p.val, q.val)
-            
             cur = self.reverse_range(prev, p, q, k)
             prev = p
             
