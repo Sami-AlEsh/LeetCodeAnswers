@@ -15,8 +15,7 @@ class Solution:
         
         while q:
             cur = []
-            n = len(q)
-            for _ in range(n):
+            for _ in range(len(q)):
                 node = q.popleft()
                 if rtl: cur.insert(0, node.val)
                 else: cur.append(node.val)
