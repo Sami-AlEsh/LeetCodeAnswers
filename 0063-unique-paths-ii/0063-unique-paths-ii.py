@@ -1,10 +1,9 @@
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        if obstacleGrid[0][0] == 1 or obstacleGrid[-1][-1] == 1: return 0
+        
         n, m = len(obstacleGrid), len(obstacleGrid[0])
         memo = [[None for _ in range(m)] for _ in range(n)]
-        
-        # Edge case
-        if obstacleGrid[0][0] == 1: return 0
         
         # Fill first column
         value = 1
@@ -34,4 +33,3 @@ class Solution:
             return memo[i][j]
         
         return dp(n-1, m-1)
-        
